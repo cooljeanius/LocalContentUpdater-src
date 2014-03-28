@@ -25,9 +25,9 @@ public:
 
 public:
 	// Overall operation
-	bool Read( FILE *fp, const char *path );
+	bool Read(FILE *fp, const char *path);
 	bool HasChanges() { return m_bChanges; }
-	void Write( FILE *fp );
+	void Write(FILE *fp);
 	const char* GetSuccessMsg() { return m_successMsgBuf; }
 
 public:
@@ -44,10 +44,10 @@ public:
 private:
 	// Low-level parsing
 	U16 GetWord();
-	void PutWord( U16 word );
+	void PutWord(U16 word);
 	U32 GetDWord();
-	void PutDWord( U32 dword );
-	bool ParseTagHeader( U16 *pCodeOut, U32 *pLenOut );
+	void PutDWord(U32 dword);
+	bool ParseTagHeader(U16 *pCodeOut, U32 *pLenOut);
 
 private:
 	char *m_path;
@@ -56,7 +56,7 @@ private:
 	U32 m_len;
 	U32 m_pos;
 	bool m_bChanges;
-	char m_successMsgBuf[ SUCCESS_MSG_SIZE ];
+	char m_successMsgBuf[SUCCESS_MSG_SIZE];
 };
 
 
