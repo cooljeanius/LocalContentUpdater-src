@@ -13,6 +13,7 @@ unix/Makefile
 *.dat
 *.pbxbtree
 config.h
+confdefs.h
 *~
 *.status
 *.pbxstrings
@@ -20,3 +21,4 @@ config.h
 *.pbxindex
 *.build
 build/*
+unix/LocalContentUpdater
