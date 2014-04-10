@@ -6,7 +6,8 @@ BIN := LocalContentUpdater
 all: ${BIN}
 
 # Build flags (debug for now)
-CXXFLAGS := -g -Wall -Wimplicit -Wmissing-prototypes -Wmissing-braces -Wparentheses -Wswitch -Wshadow -Wconversion @CXXFLAGS@
+CXXFLAGS := -g -Wall -Wmissing-braces -Wparentheses -Wswitch -Wshadow -Wconversion @CXXFLAGS@
+CFLAGS := -g -Wimplicit -Wmissing-prototypes @CFLAGS@
 INCPATHS := @CPPFLAGS@
 LDFLAGS := @LDFLAGS@
 LIBS := -lz @LIBS@
