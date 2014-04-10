@@ -37,6 +37,8 @@
 		A5458FFB18E5C5D300FBCD8F /* readDir.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = readDir.h; sourceTree = "<group>"; };
 		A5458FFC18E5C5D300FBCD8F /* readDir.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = readDir.cpp; sourceTree = "<group>"; };
 		A5458FFD18E5C5D300FBCD8F /* LocalContentUpdater.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LocalContentUpdater.cpp; sourceTree = "<group>"; };
+		A5F1F03018F7170100D2F60A /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = SOURCE_ROOT; };
+		A5F1F03118F7170500D2F60A /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = SOURCE_ROOT; };
 		C6859E8B029090EE04C91782 /* LocalContentUpdater.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = LocalContentUpdater.1; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -85,6 +87,8 @@
 		C6859E8C029090F304C91782 /* doc */ = {
 			isa = PBXGroup;
 			children = (
+				A5F1F03018F7170100D2F60A /* README.txt */,
+				A5F1F03118F7170500D2F60A /* LICENSE.txt */,
 				C6859E8B029090EE04C91782 /* LocalContentUpdater.1 */,
 			);
 			path = doc;

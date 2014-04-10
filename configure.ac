@@ -3,11 +3,22 @@
 
 AC_PREREQ([2.69])
 AC_INIT([AdobeFlashLocalContentUpdater],[8.0.0],[local_content_updater@macromedia.com])
+if test "x${PACKAGE_TARNAME}" = "x"; then
+    test -z "${PACKAGE_TARNAME}" && export PACKAGE_TARNAME=LocalContentUpdater
+    AC_SUBST([PACKAGE_TARNAME])
+fi
 AC_CONFIG_SRCDIR([common/LocalContentUpdater.cpp])
 AC_CONFIG_HEADERS([config.h])
+AC_CONFIG_AUX_DIR([build-aux])
 
 # Checks for programs.
 AC_PROG_MAKE_SET
+AC_PROG_INSTALL
+AC_SUBST([ac_cv_path_install])
+m4_ifdef([AM_PROG_INSTALL_STRIP],[
+AM_PROG_INSTALL_STRIP
+])
+AC_PROG_MKDIR_P
 AC_PROG_CXX
 AC_PROG_CC
 AC_PROG_CPP

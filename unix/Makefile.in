@@ -39,4 +39,31 @@ ${BIN}: ${OBJS}
 clean:
 	rm -f ${OBJS} ${BIN}
 
+# support for installing:
+PACKAGE_TARNAME = @PACKAGE_TARNAME@
+prefix = @prefix@
+exec_prefix = @exec_prefix@
+bindir = @bindir@
+datadir = @datadir@
+datarootdir = @datarootdir@
+mandir = @mandir@
+man1dir = $(mandir)/man1
+docdir = @docdir@
+install_sh = @install_sh@
+INSTALL = @ac_cv_path_install@
+INSTALL_DATA = @INSTALL_DATA@
+INSTALL_PROGRAM = @INSTALL@
+INSTALL_SCRIPT = @INSTALL_SCRIPT@
+INSTALL_STRIP_PROGRAM = @INSTALL_STRIP_PROGRAM@
+STRIP = @STRIP@
+MKDIR_P = @MKDIR_P@
+
+install: all ${BIN} ../README.txt ../LICENSE.txt ../doc/${BIN}.1
+	if test ! -d $(bindir); then $(MKDIR_P) $(bindir); fi
+	$(INSTALL_PROGRAM) ${BIN} $(bindir)
+	if test ! -d $(docdir); then $(MKDIR_P) $(docdir); fi
+	$(INSTALL_DATA) ../README.txt ../LICENSE.txt $(docdir)
+	if test ! -d $(man1dir); then $(MKDIR_P) $(man1dir); fi
+	$(INSTALL_DATA) ../doc/${BIN}.1 $(man1dir)
+
 # End of file.
