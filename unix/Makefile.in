@@ -66,4 +66,7 @@ install: all ${BIN} ../README.txt ../LICENSE.txt ../doc/${BIN}.1
 	if test ! -d $(man1dir); then $(MKDIR_P) $(man1dir); fi
 	$(INSTALL_DATA) ../doc/${BIN}.1 $(man1dir)
 
+check: all ${BIN}
+	test -e ${BIN} || test -x ${BIN} || ./${BIN} || ls -al
+
 # End of file.
