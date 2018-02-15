@@ -73,7 +73,7 @@ void SwfBuffer::Write(FILE *fp)
 	// Recompress if necessary
 	if (m_bCompressed) {
 		// Allocate compression buffer
-		U32 compressLen = (U32)((m_len - 8) * 1.2);
+		U32 compressLen = (U32)((m_len - 8UL) * (U32)1.2f);
 		U8 *pNewBuf = new U8[compressLen];
 		memcpy(pNewBuf, m_pBuf, 8);
 
@@ -106,7 +106,7 @@ void SwfBuffer::Write(FILE *fp)
 
 U16 SwfBuffer::GetWord()
 {
-    U16 rtn = ((U16)m_pBuf[m_pos] | ((U16)(m_pBuf[(m_pos + 1)]) << 8));
+    U16 rtn = (U16)((U16)m_pBuf[m_pos] | ((U16)(m_pBuf[(m_pos + 1)]) << 8));
 	m_pos += 2;
 	return rtn;
 }
@@ -146,7 +146,7 @@ bool SwfBuffer::ParseTagHeader(U16 *pCodeOut, U32 *pLenOut)
 
 	// Parse short header
 	*pLenOut = (header & 0x3F);
-	*pCodeOut = (header >> 6);
+	*pCodeOut = (U16)(header >> 6);
 
 	// Get extended size if necessary
 	if (*pLenOut == 0x3F) {
@@ -225,7 +225,7 @@ bool SwfBuffer::ParsePastHeaderAndDecompress()
 	// File header size is variable because of RECT structure.
 	// Determine RECT size, parse past it, and skip remaining 12 bytes of file
 	// header.
-	U8 nRectBits = ((((m_pBuf[8] >> 3) & 0x1F) * 4) + 5);
+	U8 nRectBits = (U8)((((m_pBuf[8] >> 3) & 0x1F) * 4) + 5);
 	U8 nRectBytes = (nRectBits / 8);
 	if ((nRectBits % 8) != 0) {
 		nRectBytes++;
