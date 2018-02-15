@@ -1,0 +1,3 @@
+compile linguist-vendored
+install-sh linguist-vendored
+missing linguist-vendored
