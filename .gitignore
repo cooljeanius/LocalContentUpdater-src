@@ -22,3 +22,7 @@ confdefs.h
 *.build
 build/*
 unix/LocalContentUpdater
+*.xcworkspacedata
+*.xcuserstate
+*/xcuserdata/*
+*.xcuserdatad
