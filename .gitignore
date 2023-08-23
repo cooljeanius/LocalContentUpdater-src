@@ -26,3 +26,4 @@ unix/LocalContentUpdater
 *.xcuserstate
 */xcuserdata/*
 *.xcuserdatad
+.env.local
