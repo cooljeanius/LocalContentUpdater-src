@@ -1,23 +1,26 @@
+---
 name: cooljeanius/LocalContentUpdater-src
 on:
   push:
     branches:
-    - "**/*"
+      - "**/*"
   pull_request:
 jobs:
   test:
     runs-on: ${{ matrix.os }}
     steps:
-    - name: checkout
-      uses: actions/checkout@v4
-#     # 'Transformers::TravisCI::Scripts::Dependencies' dependencies are currently unsupported
-#     # 'compiler' was not transformed because there is no suitable equivalent in GitHub Actions
-    - run: "./configure && make && make check"
+      - name: checkout
+        uses: actions/checkout@v4
+        # 'Transformers::TravisCI::Scripts::Dependencies' dependencies are
+        # currently unsupported
+        # 'compiler' was not transformed because there is no suitable
+        # equivalent in GitHub Actions
+      - run: "./configure CC=${{ matrix.compiler }} && make && make check"
     strategy:
       matrix:
         compiler:
-        - clang
-        - gcc
+          - clang
+          - gcc
         os:
-        - ubuntu-latest
-        - macos-latest
+          - ubuntu-latest
+          - macos-latest
