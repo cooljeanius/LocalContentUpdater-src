@@ -2,7 +2,7 @@
 language: cpp
 os:
   - linux
-  - osx
+  # osx times out, so disable it for now
 dist: xenial
 
 # try to build
